@@ -1,0 +1,76 @@
+name: Build Windows ARM64 installer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Nirmaan Windows ARM64 user installer
+    runs-on: windows-11-arm
+    timeout-minutes: 180
+    env:
+      VSCODE_ARCH: arm64
+      npm_config_arch: arm64
+      npm_config_foreground_scripts: "true"
+      ELECTRON_SKIP_BINARY_DOWNLOAD: "1"
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Enable long paths
+        shell: pwsh
+        run: git config --global core.longpaths true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          npm ci
+
+      - name: Download built-in extensions
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run download-builtin-extensions
+
+      - name: Prepare open-source installer
+        shell: pwsh
+        run: |
+          node -e "const fs=require('fs');const p=require('./product.json');p.quality='exploration';fs.writeFileSync('product.json',JSON.stringify(p,null,'\t')+'\n')"
+
+      - name: Build ARM64 application
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run gulp vscode-win32-arm64-min
+
+      - name: Build ARM64 user installer
+        shell: pwsh
+        run: |
+          npm run gulp vscode-win32-arm64-inno-updater
+          npm run gulp vscode-win32-arm64-user-setup
+          $version = (Get-Content package.json | ConvertFrom-Json).version
+          Move-Item .build\win32-arm64\user-setup\VSCodeSetup.exe ".build\win32-arm64\user-setup\NirmaanUserSetup-arm64-$version.exe"
+          Get-FileHash ".build\win32-arm64\user-setup\NirmaanUserSetup-arm64-$version.exe" -Algorithm SHA256
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: Nirmaan-Windows-ARM64-Installer
+          path: .build/win32-arm64/user-setup/NirmaanUserSetup-arm64-*.exe
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
