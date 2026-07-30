@@ -8,10 +8,10 @@
 AppId={#AppId}
 AppName={#NameLong}
 AppVerName={#NameVersion}
-AppPublisher=Microsoft Corporation
-AppPublisherURL=https://code.visualstudio.com/
-AppSupportURL=https://code.visualstudio.com/
-AppUpdatesURL=https://code.visualstudio.com/
+AppPublisher=Om Rajguru
+AppPublisherURL=https://omrajguru.com/
+AppSupportURL=https://omrajguru.com/contact
+AppUpdatesURL=https://github.com/omrajguru05/nirmaan
 DefaultGroupName={#NameLong}
 AllowNoIcons=yes
 OutputDir={#OutputDir}

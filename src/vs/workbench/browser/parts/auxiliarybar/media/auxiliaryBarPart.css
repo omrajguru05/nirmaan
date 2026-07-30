@@ -52,7 +52,7 @@
 .hc-black .monaco-workbench .part.auxiliarybar > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label,
 .hc-light .monaco-workbench .part.auxiliarybar > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label,
 .hc-light .monaco-workbench .part.auxiliarybar > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label {
-	border-radius: 0px;
+	border-radius: 8px;
 }
 
 .monaco-workbench .part.auxiliarybar > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label::before,

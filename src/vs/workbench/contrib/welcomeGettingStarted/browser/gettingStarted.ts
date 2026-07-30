@@ -897,10 +897,41 @@ export class GettingStartedPage extends EditorPane {
 			onShowOnStartupChanged();
 		}));
 
+		const greetingEl = $('h1.product-name.caption.nirmaan-greeting', { 'aria-live': 'polite' }, 'Namaste');
 		const header = $('.header', {},
-			$('h1.product-name.caption', {}, this.productService.nameLong),
-			$('p.subtitle.description', {}, localize({ key: 'gettingStarted.editingEvolved', comment: ['Shown as subtitle on the Welcome page.'] }, "Editing evolved"))
+			greetingEl,
+			$('p.subtitle.description', {}, this.productService.nameLong)
 		);
+
+		// Apple-style Hello, but Indian languages only — starts English "Namaste"
+		const indianGreetings = [
+			'Namaste',      // English
+			'नमस्कार',       // Marathi
+			'नमस्ते',         // Hindi
+			'નમસ્તે',         // Gujarati
+			'ਸਤ ਸ੍ਰੀ ਅਕਾਲ',   // Punjabi
+			'வணக்கம்',       // Tamil
+			'నమస్కారం',      // Telugu
+			'ನಮಸ್ಕಾರ',       // Kannada
+			'നമസ്കാരം',      // Malayalam
+			'নমস্কার',       // Bengali
+			'ନମସ୍କାର',      // Odia
+			'নমস্কাৰ',       // Assamese
+		];
+		let greetingIndex = 0;
+		if (this.shouldAnimate()) {
+			const greetingTimer = setInterval(() => {
+				greetingIndex = (greetingIndex + 1) % indianGreetings.length;
+				greetingEl.classList.add('nirmaan-greeting-out');
+				setTimeout(() => {
+					greetingEl.textContent = indianGreetings[greetingIndex];
+					greetingEl.classList.remove('nirmaan-greeting-out');
+					greetingEl.classList.add('nirmaan-greeting-in');
+					setTimeout(() => greetingEl.classList.remove('nirmaan-greeting-in'), 320);
+				}, 220);
+			}, 2200);
+			this.categoriesSlideDisposables.add({ dispose: () => clearInterval(greetingTimer) });
+		}
 
 		const leftColumn = $('.categories-column.categories-column-left', {},);
 		const rightColumn = $('.categories-column.categories-column-right', {},);

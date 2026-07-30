@@ -25,8 +25,9 @@ install nirmaan from [github releases](https://github.com/omrajguru05/nirmaan/re
 
 - [x] add a real logo / logomark
 - [x] ship a custom app icon (windows + mac)
-- [ ] welcome / empty state that actually says nirmaan
-- [ ] strip leftover "code - oss" / vscode strings from the chrome
+- [x] welcome / empty state that actually says nirmaan
+- [x] strip leftover "code - oss" / vscode strings from the chrome
+- [x] activity bar on top + rounded corners
 - [ ] basic agent chat panel scaffold (nothing fancy yet)
 
 ## run it

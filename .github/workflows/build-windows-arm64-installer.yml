@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -74,3 +74,18 @@ jobs:
           if-no-files-found: error
           compression-level: 0
           retention-days: 7
+
+      - name: Publish direct download
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $installer = Get-ChildItem .build\win32-arm64\user-setup\NirmaanUserSetup-arm64-*.exe | Select-Object -First 1
+          $directInstaller = Join-Path $installer.DirectoryName 'Nirmaan-Windows-ARM64.exe'
+          Copy-Item $installer.FullName $directInstaller
+          gh release view windows-arm64-latest --repo '${{ github.repository }}' *> $null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload windows-arm64-latest $directInstaller --clobber --repo '${{ github.repository }}'
+          } else {
+            gh release create windows-arm64-latest $directInstaller --title 'Nirmaan Windows ARM64' --notes 'Latest automated Windows ARM64 user installer.' --repo '${{ github.repository }}'
+          }

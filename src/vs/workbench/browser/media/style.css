@@ -9,20 +9,20 @@
 
 /* Font Families (with CJK support) */
 
-.monaco-workbench.mac { font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+.monaco-workbench.mac { font-family: "Geist", "Geist Sans", -apple-system, BlinkMacSystemFont, sans-serif; }
 .monaco-workbench.mac:lang(zh-Hans) { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", sans-serif; }
 .monaco-workbench.mac:lang(zh-Hant) { font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", sans-serif; }
 .monaco-workbench.mac:lang(ja) { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic Pro", sans-serif; }
 .monaco-workbench.mac:lang(ko) { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Nanum Gothic", "AppleGothic", sans-serif; }
 
-.monaco-workbench.windows { font-family: "Segoe WPC", "Segoe UI", sans-serif; }
+.monaco-workbench.windows { font-family: "Geist", "Geist Sans", "Segoe WPC", "Segoe UI", sans-serif; }
 .monaco-workbench.windows:lang(zh-Hans) { font-family: "Segoe WPC", "Segoe UI", "Microsoft YaHei", sans-serif; }
 .monaco-workbench.windows:lang(zh-Hant) { font-family: "Segoe WPC", "Segoe UI", "Microsoft Jhenghei", sans-serif; }
 .monaco-workbench.windows:lang(ja) { font-family: "Segoe WPC", "Segoe UI", "Yu Gothic UI", "Meiryo UI", sans-serif; }
 .monaco-workbench.windows:lang(ko) { font-family: "Segoe WPC", "Segoe UI", "Malgun Gothic", "Dotom", sans-serif; }
 
 /* Linux: add `system-ui` as first font and not `Ubuntu` to allow other distribution pick their standard OS font */
-.monaco-workbench.linux { font-family: system-ui, "Ubuntu", "Droid Sans", sans-serif; }
+.monaco-workbench.linux { font-family: "Geist", "Geist Sans", system-ui, "Ubuntu", "Droid Sans", sans-serif; }
 .monaco-workbench.linux:lang(zh-Hans) { font-family: system-ui, "Ubuntu", "Droid Sans", "Source Han Sans SC", "Source Han Sans CN", "Source Han Sans", sans-serif; }
 .monaco-workbench.linux:lang(zh-Hant) { font-family: system-ui, "Ubuntu", "Droid Sans", "Source Han Sans TC", "Source Han Sans TW", "Source Han Sans", sans-serif; }
 .monaco-workbench.linux:lang(ja) { font-family: system-ui, "Ubuntu", "Droid Sans", "Source Han Sans J", "Source Han Sans JP", "Source Han Sans", sans-serif; }
@@ -323,4 +323,89 @@ body {
 .monaco-workbench .monaco-action-bar:not(.vertical) .action-item .action-label:hover:not(.disabled) {
 	outline: 1px dashed var(--vscode-toolbar-hoverOutline);
 	outline-offset: -1px;
+}
+
+/* Nirmaan: floating, circular chrome */
+.monaco-workbench {
+	--nirmaan-radius-sm: 6px;
+	--nirmaan-radius-md: 8px;
+	--nirmaan-radius-lg: 12px;
+	--nirmaan-radius-xl: 16px;
+	--nirmaan-radius-pill: 9999px;
+	--nirmaan-float-gap: 8px;
+}
+
+.monaco-workbench .monaco-button {
+	border-radius: var(--nirmaan-radius-pill) !important;
+}
+
+.monaco-workbench .monaco-inputbox {
+	border-radius: var(--nirmaan-radius-md);
+}
+
+.monaco-workbench .part.sidebar {
+	margin: var(--nirmaan-float-gap) 4px var(--nirmaan-float-gap) var(--nirmaan-float-gap) !important;
+	border-radius: var(--nirmaan-radius-xl) !important;
+	overflow: hidden;
+	border: 1px solid var(--vscode-sideBar-border, #1a1a1a) !important;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.monaco-workbench .part.auxiliarybar {
+	margin: var(--nirmaan-float-gap) var(--nirmaan-float-gap) var(--nirmaan-float-gap) 4px !important;
+	border-radius: var(--nirmaan-radius-xl) !important;
+	overflow: hidden;
+	border: 1px solid var(--vscode-sideBar-border, #1a1a1a) !important;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.monaco-workbench .part.panel {
+	margin: 0 var(--nirmaan-float-gap) var(--nirmaan-float-gap) !important;
+	border-radius: var(--nirmaan-radius-xl) !important;
+	overflow: hidden;
+	border: 1px solid var(--vscode-panel-border, #1a1a1a) !important;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.monaco-workbench .part.editor {
+	margin: var(--nirmaan-float-gap) var(--nirmaan-float-gap) var(--nirmaan-float-gap) 4px;
+	border-radius: var(--nirmaan-radius-xl);
+	overflow: hidden;
+}
+
+.monaco-workbench .part.statusbar {
+	margin: 0 var(--nirmaan-float-gap) var(--nirmaan-float-gap) !important;
+	border-radius: var(--nirmaan-radius-pill) !important;
+	overflow: hidden;
+	border: 1px solid var(--vscode-statusBar-border, #1a1a1a) !important;
+}
+
+/* Top activity icons — circular pills */
+.monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon,
+.monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon {
+	border-radius: var(--nirmaan-radius-pill) !important;
+}
+
+.monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label:not(.codicon-more),
+.monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label:not(.codicon-more) {
+	border-radius: var(--nirmaan-radius-pill) !important;
+}
+
+.monaco-workbench .notifications-toasts .notification-toast-container .notification-toast,
+.monaco-workbench .notifications-center {
+	border-radius: var(--nirmaan-radius-xl) !important;
+}
+
+.monaco-workbench .quick-input-widget {
+	border-radius: var(--nirmaan-radius-xl);
+	overflow: hidden;
+}
+
+.monaco-workbench .editor-group-container > .title .tabs-container > .tab {
+	border-radius: var(--nirmaan-radius-md) var(--nirmaan-radius-md) 0 0;
+}
+
+.monaco-workbench .context-view .monaco-menu {
+	border-radius: var(--nirmaan-radius-lg);
+	overflow: hidden;
 }

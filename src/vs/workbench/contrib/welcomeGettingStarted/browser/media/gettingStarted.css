@@ -43,21 +43,29 @@
 	padding: 5px 0 0;
 	margin: 0;
 	border: none;
-	font-weight: normal;
-	font-size: 2.7em;
+	font-weight: 600;
+	font-size: 3.2em;
+	letter-spacing: -0.04em;
 	white-space: nowrap;
+	transition: opacity 220ms ease, transform 220ms ease;
 }
 
-.monaco-workbench .part.editor > .content .gettingStartedContainer .title {
-	margin-top: 1em;
-	margin-bottom: 1em;
-	flex: 1 100%;
+.monaco-workbench .part.editor > .content .gettingStartedContainer h1.nirmaan-greeting-out {
+	opacity: 0;
+	transform: translateY(8px);
+}
+
+.monaco-workbench .part.editor > .content .gettingStartedContainer h1.nirmaan-greeting-in {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .monaco-workbench .part.editor > .content .gettingStartedContainer .subtitle {
 	margin-top: .6em;
-	font-size: 2em;
+	font-size: 1.35em;
 	display: block;
+	color: var(--vscode-descriptionForeground);
+	letter-spacing: -0.02em;
 }
 
 .monaco-workbench.hc-black .part.editor > .content .gettingStartedContainer .subtitle,
