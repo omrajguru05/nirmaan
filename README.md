@@ -37,3 +37,5 @@ npm run watch
 upstream is [microsoft/vscode](https://github.com/microsoft/vscode). mit. i'll pull from them when it makes sense.
 
 built in public. follow along on [@NotOmRajguru](https://twitter.com/NotOmRajguru).
+
+wanna reach me: [omrajguru.com/contact](https://omrajguru.com/contact) or connect@omrajguru.com
