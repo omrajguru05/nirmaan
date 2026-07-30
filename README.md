@@ -1,57 +1,39 @@
-# Nirmaan
+# nirmaan
 
-**An AI IDE, built in the open.**
+yo. i'm [om](https://twitter.com/NotOmRajguru) and i'm building an ai ide.
 
-Nirmaan is a dark-first, developer-native editor forked from [VS Code](https://github.com/microsoft/vscode) — rebranded and redesigned from the core up. Same editing foundation. New product identity. Built for the agent era.
+forked vscode, ripped out the microsoft branding, and started wiring in my own design language (wisp — dark, minimal, terminal-y). that's it for now. early as hell.
 
-> Deploy agents like you deploy apps. Write code like the editor was made for it.
+repo: [omrajguru05/nirmaan](https://github.com/omrajguru05/nirmaan)
 
-**Built by [@NotOmRajguru](https://twitter.com/NotOmRajguru)** · [GitHub](https://github.com/omrajguru05/nirmaan)
+## what exists
 
----
+- renamed the product to **nirmaan** (app id, protocol, data folder, the whole thing)
+- core design tokens live in `src/vs/base/common/nirmaanDesignTokens.ts` — not a theme you can peel off
+- near-black ui, `#006efe` accent only where it matters, geist fonts if you've got them installed
+- still boots like vscode. because under the hood it still is.
 
-## What's different
+## next (tiny, doable)
 
-- **Nirmaan, not Code — OSS** — product name, protocol, and install identity are ours
-- **Wisp design language** — near-black surfaces (`#000` / `#0a0a0a`), `#ededed` text, accent blue `#006efe` only where it earns it
-- **Geist-first typography** — Geist Sans for UI, Geist Mono for the editor
-- **Core tokens, not a theme skin** — colors and fonts live in the workbench defaults, not a user theme you can toggle off
+- [ ] add a real logo / logomark
+- [ ] ship a custom app icon (windows + mac)
+- [ ] welcome / empty state that actually says nirmaan
+- [ ] strip leftover "code - oss" / vscode strings from the chrome
+- [ ] basic agent chat panel scaffold (nothing fancy yet)
 
-```
-src/vs/base/common/nirmaanDesignTokens.ts   ← design language source of truth
-```
-
-## Status
-
-Early. Public. Shipping in the open.
-
-Star the repo, follow [@NotOmRajguru](https://twitter.com/NotOmRajguru), and watch what we build next.
-
-## Build from source
-
-Same flow as Code — OSS:
+## run it
 
 ```bash
 git clone https://github.com/omrajguru05/nirmaan.git
 cd nirmaan
 npm install
 npm run watch
-# in another terminal
-./scripts/code.sh   # macOS / Linux
-./scripts/code.bat  # Windows
+./scripts/code.bat   # windows
+# ./scripts/code.sh  # mac/linux
 ```
 
-See [How to Contribute](https://github.com/microsoft/vscode/wiki/How-to-Contribute) for the full VS Code development workflow.
+## notes
 
-## Upstream
+upstream is [microsoft/vscode](https://github.com/microsoft/vscode). mit. i'll pull from them when it makes sense.
 
-Nirmaan is based on [microsoft/vscode](https://github.com/microsoft/vscode) (MIT).
-
-We keep `upstream` pointed at Microsoft's repo and build product on top. Upstream fixes and features can be merged forward as we go.
-
-## License
-
-Copyright for Microsoft VS Code portions: Microsoft Corporation.  
-Nirmaan product branding and design language: Om Rajguru ([@NotOmRajguru](https://twitter.com/NotOmRajguru)).
-
-Licensed under the [MIT](LICENSE.txt) license.
+built in public. follow along on [@NotOmRajguru](https://twitter.com/NotOmRajguru).
