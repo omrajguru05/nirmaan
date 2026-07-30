@@ -2,9 +2,17 @@
 
 yo. i'm [om](https://twitter.com/NotOmRajguru) and i'm building an ai ide.
 
-forked vscode, ripped out the microsoft branding, and started wiring in my own design language (wisp — dark, minimal, terminal-y). that's it for now. early as hell.
+forked vscode, ripped out the microsoft branding, and started wiring in my own design language (dark, minimal, terminal-y). that's it for now. early as hell.
 
 repo: [omrajguru05/nirmaan](https://github.com/omrajguru05/nirmaan)
+
+## download
+
+install nirmaan from [github releases](https://github.com/omrajguru05/nirmaan/releases):
+
+- **windows (x64)** — `.exe` installer
+- **windows (arm64)** — `.exe` installer
+- **macos (universal)** — intel and apple silicon
 
 ## what exists
 
@@ -15,8 +23,8 @@ repo: [omrajguru05/nirmaan](https://github.com/omrajguru05/nirmaan)
 
 ## next (tiny, doable)
 
-- [ ] add a real logo / logomark
-- [ ] ship a custom app icon (windows + mac)
+- [x] add a real logo / logomark
+- [x] ship a custom app icon (windows + mac)
 - [ ] welcome / empty state that actually says nirmaan
 - [ ] strip leftover "code - oss" / vscode strings from the chrome
 - [ ] basic agent chat panel scaffold (nothing fancy yet)

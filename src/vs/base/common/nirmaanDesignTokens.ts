@@ -6,7 +6,7 @@
 /**
  * Nirmaan core design language.
  *
- * Derived from the Wisp design system (dark-first, terminal-native, minimal).
+ * Dark-first, terminal-native, and minimal.
  * These tokens are the product defaults — not an optional theme overlay.
  * Prefer importing from here when adding Nirmaan-branded UI surfaces.
  */
