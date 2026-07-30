@@ -4,6 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as platform from '../../../base/common/platform.js';
+import { NirmaanFonts } from '../../../base/common/nirmaanDesignTokens.js';
 import { EditorOption, FindComputedEditorOptionValueById } from './editorOptions.js';
 import { EditorZoom } from './editorZoom.js';
 
@@ -219,15 +220,15 @@ export const FONT_VARIATION_TRANSLATE = 'translate';
 /**
  * @internal
  */
-export const DEFAULT_WINDOWS_FONT_FAMILY = 'Consolas, \'Courier New\', monospace';
+export const DEFAULT_WINDOWS_FONT_FAMILY = NirmaanFonts.mono;
 /**
  * @internal
  */
-export const DEFAULT_MAC_FONT_FAMILY = 'Menlo, Monaco, \'Courier New\', monospace';
+export const DEFAULT_MAC_FONT_FAMILY = NirmaanFonts.monoMac;
 /**
  * @internal
  */
-export const DEFAULT_LINUX_FONT_FAMILY = '\'Droid Sans Mono\', \'monospace\', monospace';
+export const DEFAULT_LINUX_FONT_FAMILY = NirmaanFonts.monoLinux;
 /**
  * @internal
  */

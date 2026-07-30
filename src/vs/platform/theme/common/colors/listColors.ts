@@ -12,6 +12,7 @@ import { registerColor, darken, lighten, transparent, ifDefinedThenElse } from '
 // Import the colors we need
 import { foreground, contrastBorder, activeContrastBorder, focusBorder, iconForeground } from './baseColors.js';
 import { editorWidgetBackground, editorFindMatchHighlightBorder, editorFindMatchHighlight, widgetShadow, editorWidgetForeground } from './editorColors.js';
+import { NirmaanDark, NirmaanLight } from '../../../../base/common/nirmaanDesignTokens.js';
 
 
 export const listFocusBackground = registerColor('list.focusBackground',
@@ -31,11 +32,11 @@ export const listFocusAndSelectionOutline = registerColor('list.focusAndSelectio
 	nls.localize('listFocusAndSelectionOutline', "List/Tree outline color for the focused item when the list/tree is active and selected. An active list/tree has keyboard focus, an inactive does not."));
 
 export const listActiveSelectionBackground = registerColor('list.activeSelectionBackground',
-	{ dark: '#04395E', light: '#0060C0', hcDark: null, hcLight: Color.fromHex('#0F4A85').transparent(0.1) },
+	{ dark: NirmaanDark.accentMuted, light: NirmaanLight.accentMuted, hcDark: null, hcLight: Color.fromHex('#0F4A85').transparent(0.1) },
 	nls.localize('listActiveSelectionBackground', "List/Tree background color for the selected item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not."));
 
 export const listActiveSelectionForeground = registerColor('list.activeSelectionForeground',
-	{ dark: Color.white, light: Color.white, hcDark: null, hcLight: null },
+	{ dark: NirmaanDark.text1, light: NirmaanLight.text1, hcDark: null, hcLight: null },
 	nls.localize('listActiveSelectionForeground', "List/Tree foreground color for the selected item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not."));
 
 export const listActiveSelectionIconForeground = registerColor('list.activeSelectionIconForeground',
@@ -43,7 +44,7 @@ export const listActiveSelectionIconForeground = registerColor('list.activeSelec
 	nls.localize('listActiveSelectionIconForeground', "List/Tree icon foreground color for the selected item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not."));
 
 export const listInactiveSelectionBackground = registerColor('list.inactiveSelectionBackground',
-	{ dark: '#37373D', light: '#E4E6F1', hcDark: null, hcLight: Color.fromHex('#0F4A85').transparent(0.1) },
+	{ dark: NirmaanDark.bg3, light: NirmaanLight.bg3, hcDark: null, hcLight: Color.fromHex('#0F4A85').transparent(0.1) },
 	nls.localize('listInactiveSelectionBackground', "List/Tree background color for the selected item when the list/tree is inactive. An active list/tree has keyboard focus, an inactive does not."));
 
 export const listInactiveSelectionForeground = registerColor('list.inactiveSelectionForeground',
@@ -63,7 +64,7 @@ export const listInactiveFocusOutline = registerColor('list.inactiveFocusOutline
 	nls.localize('listInactiveFocusOutline', "List/Tree outline color for the focused item when the list/tree is inactive. An active list/tree has keyboard focus, an inactive does not."));
 
 export const listHoverBackground = registerColor('list.hoverBackground',
-	{ dark: '#2A2D2E', light: '#F0F0F0', hcDark: Color.white.transparent(0.1), hcLight: Color.fromHex('#0F4A85').transparent(0.1) },
+	{ dark: NirmaanDark.bg3, light: NirmaanLight.bg3, hcDark: Color.white.transparent(0.1), hcLight: Color.fromHex('#0F4A85').transparent(0.1) },
 	nls.localize('listHoverBackground', "List/Tree background when hovering over items using the mouse."));
 
 export const listHoverForeground = registerColor('list.hoverForeground',
@@ -71,7 +72,7 @@ export const listHoverForeground = registerColor('list.hoverForeground',
 	nls.localize('listHoverForeground', "List/Tree foreground when hovering over items using the mouse."));
 
 export const listDropOverBackground = registerColor('list.dropBackground',
-	{ dark: '#062F4A', light: '#D6EBFF', hcDark: null, hcLight: null },
+	{ dark: NirmaanDark.accentMuted, light: NirmaanLight.accentMuted, hcDark: null, hcLight: null },
 	nls.localize('listDropBackground', "List/Tree drag and drop background when moving items over other items when using the mouse."));
 
 export const listDropBetweenBackground = registerColor('list.dropBetweenBackground',

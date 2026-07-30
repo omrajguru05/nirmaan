@@ -7,17 +7,18 @@ import * as nls from '../../../../nls.js';
 
 // Import the effects we need
 import { Color, RGBA } from '../../../../base/common/color.js';
-import { registerColor, transparent, lighten, darken, ColorTransformType } from '../colorUtils.js';
+import { registerColor, transparent, ColorTransformType } from '../colorUtils.js';
 
 // Import the colors we need
 import { foreground, contrastBorder, focusBorder, iconForeground } from './baseColors.js';
 import { editorWidgetBackground } from './editorColors.js';
+import { NirmaanDark, NirmaanLight } from '../../../../base/common/nirmaanDesignTokens.js';
 
 
 // ----- input
 
 export const inputBackground = registerColor('input.background',
-	{ dark: '#3C3C3C', light: Color.white, hcDark: Color.black, hcLight: Color.white },
+	{ dark: NirmaanDark.bg3, light: NirmaanLight.bg1, hcDark: Color.black, hcLight: Color.white },
 	nls.localize('inputBoxBackground', "Input box background."));
 
 export const inputForeground = registerColor('input.foreground',
@@ -25,11 +26,11 @@ export const inputForeground = registerColor('input.foreground',
 	nls.localize('inputBoxForeground', "Input box foreground."));
 
 export const inputBorder = registerColor('input.border',
-	{ dark: null, light: null, hcDark: contrastBorder, hcLight: contrastBorder },
+	{ dark: NirmaanDark.border2, light: NirmaanLight.border2, hcDark: contrastBorder, hcLight: contrastBorder },
 	nls.localize('inputBoxBorder', "Input box border."));
 
 export const inputActiveOptionBorder = registerColor('inputOption.activeBorder',
-	{ dark: '#007ACC', light: '#007ACC', hcDark: contrastBorder, hcLight: contrastBorder },
+	{ dark: NirmaanDark.accent, light: NirmaanLight.accent, hcDark: contrastBorder, hcLight: contrastBorder },
 	nls.localize('inputBoxActiveOptionBorder', "Border color of activated options in input fields."));
 
 export const inputActiveOptionHoverBackground = registerColor('inputOption.hoverBackground',
@@ -60,7 +61,7 @@ export const inputValidationInfoForeground = registerColor('inputValidation.info
 	nls.localize('inputValidationInfoForeground', "Input validation foreground color for information severity."));
 
 export const inputValidationInfoBorder = registerColor('inputValidation.infoBorder',
-	{ dark: '#007acc', light: '#007acc', hcDark: contrastBorder, hcLight: contrastBorder },
+	{ dark: NirmaanDark.accent, light: NirmaanLight.accent, hcDark: contrastBorder, hcLight: contrastBorder },
 	nls.localize('inputValidationInfoBorder', "Input validation border color for information severity."));
 
 export const inputValidationWarningBackground = registerColor('inputValidation.warningBackground',
@@ -72,7 +73,7 @@ export const inputValidationWarningForeground = registerColor('inputValidation.w
 	nls.localize('inputValidationWarningForeground', "Input validation foreground color for warning severity."));
 
 export const inputValidationWarningBorder = registerColor('inputValidation.warningBorder',
-	{ dark: '#B89500', light: '#B89500', hcDark: contrastBorder, hcLight: contrastBorder },
+	{ dark: NirmaanDark.warning, light: NirmaanLight.warning, hcDark: contrastBorder, hcLight: contrastBorder },
 	nls.localize('inputValidationWarningBorder', "Input validation border color for warning severity."));
 
 export const inputValidationErrorBackground = registerColor('inputValidation.errorBackground',
@@ -84,33 +85,33 @@ export const inputValidationErrorForeground = registerColor('inputValidation.err
 	nls.localize('inputValidationErrorForeground', "Input validation foreground color for error severity."));
 
 export const inputValidationErrorBorder = registerColor('inputValidation.errorBorder',
-	{ dark: '#BE1100', light: '#BE1100', hcDark: contrastBorder, hcLight: contrastBorder },
+	{ dark: NirmaanDark.error, light: NirmaanLight.error, hcDark: contrastBorder, hcLight: contrastBorder },
 	nls.localize('inputValidationErrorBorder', "Input validation border color for error severity."));
 
 
 // ----- select
 
 export const selectBackground = registerColor('dropdown.background',
-	{ dark: '#3C3C3C', light: Color.white, hcDark: Color.black, hcLight: Color.white },
+	{ dark: NirmaanDark.bg3, light: NirmaanLight.bg1, hcDark: Color.black, hcLight: Color.white },
 	nls.localize('dropdownBackground', "Dropdown background."));
 
 export const selectListBackground = registerColor('dropdown.listBackground',
-	{ dark: null, light: null, hcDark: Color.black, hcLight: Color.white },
+	{ dark: NirmaanDark.bg2, light: NirmaanLight.bg1, hcDark: Color.black, hcLight: Color.white },
 	nls.localize('dropdownListBackground', "Dropdown list background."));
 
 export const selectForeground = registerColor('dropdown.foreground',
-	{ dark: '#F0F0F0', light: foreground, hcDark: Color.white, hcLight: foreground },
+	{ dark: NirmaanDark.text1, light: foreground, hcDark: Color.white, hcLight: foreground },
 	nls.localize('dropdownForeground', "Dropdown foreground."));
 
 export const selectBorder = registerColor('dropdown.border',
-	{ dark: selectBackground, light: '#CECECE', hcDark: contrastBorder, hcLight: contrastBorder },
+	{ dark: NirmaanDark.border2, light: NirmaanLight.border2, hcDark: contrastBorder, hcLight: contrastBorder },
 	nls.localize('dropdownBorder', "Dropdown border."));
 
 
 // ------ button
 
 export const buttonForeground = registerColor('button.foreground',
-	Color.white,
+	{ dark: NirmaanDark.buttonPrimaryFg, light: NirmaanLight.buttonPrimaryFg, hcDark: Color.white, hcLight: Color.white },
 	nls.localize('buttonForeground', "Button foreground color."));
 
 export const buttonSeparator = registerColor('button.separator',
@@ -118,11 +119,11 @@ export const buttonSeparator = registerColor('button.separator',
 	nls.localize('buttonSeparator', "Button separator color."));
 
 export const buttonBackground = registerColor('button.background',
-	{ dark: '#0E639C', light: '#007ACC', hcDark: Color.black, hcLight: '#0F4A85' },
+	{ dark: NirmaanDark.buttonPrimaryBg, light: NirmaanLight.buttonPrimaryBg, hcDark: Color.black, hcLight: '#0F4A85' },
 	nls.localize('buttonBackground', "Button background color."));
 
 export const buttonHoverBackground = registerColor('button.hoverBackground',
-	{ dark: lighten(buttonBackground, 0.2), light: darken(buttonBackground, 0.2), hcDark: buttonBackground, hcLight: buttonBackground },
+	{ dark: NirmaanDark.buttonPrimaryHover, light: NirmaanLight.buttonPrimaryHover, hcDark: buttonBackground, hcLight: buttonBackground },
 	nls.localize('buttonHoverBackground', "Button background color when hovering."));
 
 export const buttonBorder = registerColor('button.border',
@@ -130,15 +131,15 @@ export const buttonBorder = registerColor('button.border',
 	nls.localize('buttonBorder', "Button border color."));
 
 export const buttonSecondaryForeground = registerColor('button.secondaryForeground',
-	{ dark: Color.white, light: Color.white, hcDark: Color.white, hcLight: foreground },
+	{ dark: NirmaanDark.text1, light: NirmaanLight.text1, hcDark: Color.white, hcLight: foreground },
 	nls.localize('buttonSecondaryForeground', "Secondary button foreground color."));
 
 export const buttonSecondaryBackground = registerColor('button.secondaryBackground',
-	{ dark: '#3A3D41', light: '#5F6A79', hcDark: null, hcLight: Color.white },
+	{ dark: NirmaanDark.bg3, light: NirmaanLight.bg3, hcDark: null, hcLight: Color.white },
 	nls.localize('buttonSecondaryBackground', "Secondary button background color."));
 
 export const buttonSecondaryHoverBackground = registerColor('button.secondaryHoverBackground',
-	{ dark: lighten(buttonSecondaryBackground, 0.2), light: darken(buttonSecondaryBackground, 0.2), hcDark: null, hcLight: null },
+	{ dark: NirmaanDark.border3, light: NirmaanLight.border2, hcDark: null, hcLight: null },
 	nls.localize('buttonSecondaryHoverBackground', "Secondary button background color when hovering."));
 
 // ------ radio

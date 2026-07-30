@@ -11,6 +11,7 @@ import { registerColor, transparent } from '../colorUtils.js';
 
 // Import the colors we need
 import { contrastBorder, focusBorder } from './baseColors.js';
+import { NirmaanDark, NirmaanLight } from '../../../../base/common/nirmaanDesignTokens.js';
 
 
 // ----- sash
@@ -23,11 +24,11 @@ export const sashHoverBorder = registerColor('sash.hoverBorder',
 // ----- badge
 
 export const badgeBackground = registerColor('badge.background',
-	{ dark: '#4D4D4D', light: '#C4C4C4', hcDark: Color.black, hcLight: '#0F4A85' },
+	{ dark: NirmaanDark.border3, light: NirmaanLight.border2, hcDark: Color.black, hcLight: '#0F4A85' },
 	nls.localize('badgeBackground', "Badge background color. Badges are small information labels, e.g. for search results count."));
 
 export const badgeForeground = registerColor('badge.foreground',
-	{ dark: Color.white, light: '#333', hcDark: Color.white, hcLight: Color.white },
+	{ dark: NirmaanDark.text1, light: NirmaanLight.text1, hcDark: Color.white, hcLight: Color.white },
 	nls.localize('badgeForeground', "Badge foreground color. Badges are small information labels, e.g. for search results count."));
 
 export const activityWarningBadgeForeground = registerColor('activityWarningBadge.foreground',
@@ -35,7 +36,7 @@ export const activityWarningBadgeForeground = registerColor('activityWarningBadg
 	nls.localize('activityWarningBadge.foreground', 'Foreground color of the warning activity badge'));
 
 export const activityWarningBadgeBackground = registerColor('activityWarningBadge.background',
-	{ dark: '#B27C00', light: '#B27C00', hcDark: null, hcLight: '#B27C00' },
+	{ dark: NirmaanDark.warning, light: NirmaanLight.warning, hcDark: null, hcLight: NirmaanLight.warning },
 	nls.localize('activityWarningBadge.background', 'Background color of the warning activity badge'));
 
 export const activityErrorBadgeForeground = registerColor('activityErrorBadge.foreground',
@@ -43,7 +44,7 @@ export const activityErrorBadgeForeground = registerColor('activityErrorBadge.fo
 	nls.localize('activityErrorBadge.foreground', 'Foreground color of the error activity badge'));
 
 export const activityErrorBadgeBackground = registerColor('activityErrorBadge.background',
-	{ dark: '#F14C4C', light: '#E51400', hcDark: null, hcLight: '#F14C4C' },
+	{ dark: NirmaanDark.error, light: NirmaanLight.error, hcDark: null, hcLight: NirmaanDark.error },
 	nls.localize('activityErrorBadge.background', 'Background color of the error activity badge'));
 
 
@@ -73,7 +74,7 @@ export const scrollbarBackground = registerColor('scrollbar.background',
 // ----- progress bar
 
 export const progressBarBackground = registerColor('progressBar.background',
-	{ dark: Color.fromHex('#0E70C0'), light: Color.fromHex('#0E70C0'), hcDark: contrastBorder, hcLight: contrastBorder },
+	{ dark: Color.fromHex(NirmaanDark.accent), light: Color.fromHex(NirmaanLight.accent), hcDark: contrastBorder, hcLight: contrastBorder },
 	nls.localize('progressBarBackground', "Background color of the progress bar that can show for long running operations."));
 
 // ----- chart

@@ -12,16 +12,17 @@ import { registerColor, transparent, lessProminent, darken, lighten } from '../c
 // Import the colors we need
 import { foreground, contrastBorder, activeContrastBorder } from './baseColors.js';
 import { scrollbarShadow, badgeBackground } from './miscColors.js';
+import { NirmaanDark, NirmaanLight } from '../../../../base/common/nirmaanDesignTokens.js';
 
 
 // ----- editor
 
 export const editorBackground = registerColor('editor.background',
-	{ light: '#ffffff', dark: '#1E1E1E', hcDark: Color.black, hcLight: Color.white },
+	{ light: NirmaanLight.bg1, dark: NirmaanDark.bg2, hcDark: Color.black, hcLight: Color.white },
 	nls.localize('editorBackground', "Editor background color."));
 
 export const editorForeground = registerColor('editor.foreground',
-	{ light: '#333333', dark: '#BBBBBB', hcDark: Color.white, hcLight: foreground },
+	{ light: NirmaanLight.text1, dark: NirmaanDark.text1, hcDark: Color.white, hcLight: foreground },
 	nls.localize('editorForeground', "Editor default foreground color."));
 
 
@@ -34,7 +35,7 @@ export const editorStickyScrollGutterBackground = registerColor('editorStickyScr
 	nls.localize('editorStickyScrollGutterBackground', "Background color of the gutter part of sticky scroll in the editor"));
 
 export const editorStickyScrollHoverBackground = registerColor('editorStickyScrollHover.background',
-	{ dark: '#2A2D2E', light: '#F0F0F0', hcDark: null, hcLight: Color.fromHex('#0F4A85').transparent(0.1) },
+	{ dark: NirmaanDark.bg3, light: NirmaanLight.bg3, hcDark: null, hcLight: Color.fromHex('#0F4A85').transparent(0.1) },
 	nls.localize('editorStickyScrollHoverBackground', "Background color of sticky scroll on hover in the editor"));
 
 export const editorStickyScrollBorder = registerColor('editorStickyScroll.border',
@@ -47,7 +48,7 @@ export const editorStickyScrollShadow = registerColor('editorStickyScroll.shadow
 
 
 export const editorWidgetBackground = registerColor('editorWidget.background',
-	{ dark: '#252526', light: '#F3F3F3', hcDark: '#0C141F', hcLight: Color.white },
+	{ dark: NirmaanDark.bg3, light: NirmaanLight.bg2, hcDark: '#0C141F', hcLight: Color.white },
 	nls.localize('editorWidgetBackground', 'Background color of editor widgets, such as find/replace.'));
 
 export const editorWidgetForeground = registerColor('editorWidget.foreground',
@@ -55,7 +56,7 @@ export const editorWidgetForeground = registerColor('editorWidget.foreground',
 	nls.localize('editorWidgetForeground', 'Foreground color of editor widgets, such as find/replace.'));
 
 export const editorWidgetBorder = registerColor('editorWidget.border',
-	{ dark: '#454545', light: '#C8C8C8', hcDark: contrastBorder, hcLight: contrastBorder },
+	{ dark: NirmaanDark.border2, light: NirmaanLight.border2, hcDark: contrastBorder, hcLight: contrastBorder },
 	nls.localize('editorWidgetBorder', 'Border color of editor widgets. The color is only used if the widget chooses to have a border and if the color is not overridden by a widget.'));
 
 export const editorWidgetResizeBorder = registerColor('editorWidget.resizeBorder',
@@ -68,7 +69,7 @@ export const editorErrorBackground = registerColor('editorError.background',
 	nls.localize('editorError.background', 'Background color of error text in the editor. The color must not be opaque so as not to hide underlying decorations.'), true);
 
 export const editorErrorForeground = registerColor('editorError.foreground',
-	{ dark: '#F14C4C', light: '#E51400', hcDark: '#F48771', hcLight: '#B5200D' },
+	{ dark: NirmaanDark.error, light: NirmaanLight.error, hcDark: '#F48771', hcLight: '#B5200D' },
 	nls.localize('editorError.foreground', 'Foreground color of error squigglies in the editor.'));
 
 export const editorErrorBorder = registerColor('editorError.border',
@@ -81,7 +82,7 @@ export const editorWarningBackground = registerColor('editorWarning.background',
 	nls.localize('editorWarning.background', 'Background color of warning text in the editor. The color must not be opaque so as not to hide underlying decorations.'), true);
 
 export const editorWarningForeground = registerColor('editorWarning.foreground',
-	{ dark: '#CCA700', light: '#BF8803', hcDark: '#FFD370', hcLight: '#895503' },
+	{ dark: NirmaanDark.warning, light: NirmaanLight.warning, hcDark: '#FFD370', hcLight: '#895503' },
 	nls.localize('editorWarning.foreground', 'Foreground color of warning squigglies in the editor.'));
 
 export const editorWarningBorder = registerColor('editorWarning.border',
@@ -94,7 +95,7 @@ export const editorInfoBackground = registerColor('editorInfo.background',
 	nls.localize('editorInfo.background', 'Background color of info text in the editor. The color must not be opaque so as not to hide underlying decorations.'), true);
 
 export const editorInfoForeground = registerColor('editorInfo.foreground',
-	{ dark: '#59a4f9', light: '#0063d3', hcDark: '#59a4f9', hcLight: '#0063d3' },
+	{ dark: NirmaanDark.accentHover, light: NirmaanLight.accent, hcDark: '#59a4f9', hcLight: '#0063d3' },
 	nls.localize('editorInfo.foreground', 'Foreground color of info squigglies in the editor.'));
 
 export const editorInfoBorder = registerColor('editorInfo.border',
@@ -112,7 +113,7 @@ export const editorHintBorder = registerColor('editorHint.border',
 
 
 export const editorActiveLinkForeground = registerColor('editorLink.activeForeground',
-	{ dark: '#4E94CE', light: Color.blue, hcDark: Color.cyan, hcLight: '#292929' },
+	{ dark: NirmaanDark.accentHover, light: NirmaanLight.accent, hcDark: Color.cyan, hcLight: '#292929' },
 	nls.localize('activeLinkForeground', 'Color of active links.'));
 
 
@@ -341,7 +342,7 @@ export const widgetShadow = registerColor('widget.shadow',
 	nls.localize('widgetShadow', 'Shadow color of widgets such as find/replace inside the editor.'));
 
 export const widgetBorder = registerColor('widget.border',
-	{ dark: null, light: null, hcDark: contrastBorder, hcLight: contrastBorder },
+	{ dark: NirmaanDark.border2, light: NirmaanLight.border2, hcDark: contrastBorder, hcLight: contrastBorder },
 	nls.localize('widgetBorder', 'Border color of widgets such as find/replace inside the editor.'));
 
 
