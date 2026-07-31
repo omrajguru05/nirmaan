@@ -37,11 +37,6 @@
 .monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-scrollable-element,
 .monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-list:not(.element-focused):focus:before,
 .monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-list-row {
-.monaco-workbench > .notifications-toasts .notifications-list-container,
-.monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast,
-.monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-scrollable-element,
-.monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-list:not(.element-focused):focus:before,
-.monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-list-row {
 	border-radius: 6px;
 	border: 1px dashed var(--vscode-sideBar-border, #3a3a3a);
 }

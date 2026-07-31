@@ -20,6 +20,8 @@ install nirmaan from [github releases](https://github.com/omrajguru05/nirmaan/re
 - core design tokens live in `src/vs/base/common/nirmaanDesignTokens.ts` — not a theme you can peel off
 - near-black ui, `#006efe` accent only where it matters, geist fonts if you've got them installed
 - still boots like vscode. because under the hood it still is.
+- license / help links point at [omrajguru05/nirmaan](https://github.com/omrajguru05/nirmaan) (not microsoft/vscode)
+- issue reporter removed from the product chrome
 
 ## next (tiny, doable)
 
@@ -28,6 +30,8 @@ install nirmaan from [github releases](https://github.com/omrajguru05/nirmaan/re
 - [x] welcome / empty state that actually says nirmaan
 - [x] strip leftover "code - oss" / vscode strings from the chrome
 - [x] activity bar on top + rounded corners
+- [x] point license / product urls at our repo
+- [x] remove issue reporter
 - [ ] basic agent chat panel scaffold (nothing fancy yet)
 
 ## run it

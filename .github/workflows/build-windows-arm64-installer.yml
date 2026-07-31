@@ -83,9 +83,9 @@ jobs:
           $installer = Get-ChildItem .build\win32-arm64\user-setup\NirmaanUserSetup-arm64-*.exe | Select-Object -First 1
           $directInstaller = Join-Path $installer.DirectoryName 'Nirmaan-Windows-ARM64.exe'
           Copy-Item $installer.FullName $directInstaller
-          gh release view windows-arm64-latest --repo '${{ github.repository }}' *> $null
+          gh release view windows-arm64-day-two --repo '${{ github.repository }}' *> $null
           if ($LASTEXITCODE -eq 0) {
-            gh release upload windows-arm64-latest $directInstaller --clobber --repo '${{ github.repository }}'
+            gh release upload windows-arm64-day-two $directInstaller --clobber --repo '${{ github.repository }}'
           } else {
-            gh release create windows-arm64-latest $directInstaller --title 'Nirmaan Windows ARM64' --notes 'Latest automated Windows ARM64 user installer.' --repo '${{ github.repository }}'
+            gh release create windows-arm64-day-two $directInstaller --title 'Nirmaan Windows ARM64 — Day Two' --notes 'Day Two Windows ARM64 user installer.' --repo '${{ github.repository }}'
           }

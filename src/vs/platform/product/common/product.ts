@@ -67,10 +67,9 @@ else {
 			applicationName: 'nirmaan',
 			dataFolderName: '.nirmaan',
 			urlProtocol: 'nirmaan',
-			reportIssueUrl: 'https://github.com/omrajguru05/nirmaan/issues/new',
 			licenseName: 'MIT',
-			licenseUrl: 'https://github.com/microsoft/vscode/blob/main/LICENSE.txt',
-			serverLicenseUrl: 'https://github.com/microsoft/vscode/blob/main/LICENSE.txt'
+			licenseUrl: 'https://github.com/omrajguru05/nirmaan/blob/main/LICENSE.txt',
+			serverLicenseUrl: 'https://github.com/omrajguru05/nirmaan/blob/main/LICENSE.txt'
 		});
 	}
 }
