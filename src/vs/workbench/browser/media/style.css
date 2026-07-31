@@ -373,22 +373,52 @@ body {
 	overflow: hidden;
 }
 
+/* Status bar stays edge-flush — not floating */
 .monaco-workbench .part.statusbar {
-	margin: 0 var(--nirmaan-float-gap) var(--nirmaan-float-gap) !important;
-	border-radius: var(--nirmaan-radius-pill) !important;
-	overflow: hidden;
-	border: 1px solid var(--vscode-statusBar-border, #1a1a1a) !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
 }
 
-/* Top activity icons — circular pills */
+/* Top activity icons — true circles, clearer spacing */
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon,
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon {
-	border-radius: var(--nirmaan-radius-pill) !important;
+	padding: 0 5px !important;
+	margin: 0 1px !important;
+	border-radius: 0 !important;
+	background-color: transparent !important;
 }
 
-.monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label:not(.codicon-more),
-.monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label:not(.codicon-more) {
-	border-radius: var(--nirmaan-radius-pill) !important;
+.monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon .action-label:not(.codicon-more),
+.monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon .action-label:not(.codicon-more) {
+	width: 28px !important;
+	height: 28px !important;
+	padding: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	border-radius: 50% !important;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon.checked .action-label:not(.codicon-more),
+.monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon.checked .action-label:not(.codicon-more) {
+	background-color: var(--vscode-activityBarTop-activeBackground, rgba(255, 255, 255, 0.12)) !important;
+}
+
+.monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon:not(.checked):hover .action-label:not(.codicon-more),
+.monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon:not(.checked):hover .action-label:not(.codicon-more) {
+	background-color: color-mix(in srgb, var(--vscode-foreground) 10%, transparent);
+}
+
+.monaco-workbench .part.sidebar > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon .action-label::before,
+.monaco-workbench .part.sidebar > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon .action-label::before,
+.monaco-workbench .part.auxiliarybar > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon .action-label::before,
+.monaco-workbench .part.auxiliarybar > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon .action-label::before {
+	position: static !important;
+	left: auto !important;
+	line-height: 28px !important;
 }
 
 .monaco-workbench .notifications-toasts .notification-toast-container .notification-toast,

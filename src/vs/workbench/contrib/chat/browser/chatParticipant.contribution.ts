@@ -8,7 +8,6 @@ import { Codicon } from '../../../../base/common/codicons.js';
 import { toErrorMessage } from '../../../../base/common/errorMessage.js';
 import { Event } from '../../../../base/common/event.js';
 import { createCommandUri, MarkdownString } from '../../../../base/common/htmlContent.js';
-import { KeyCode, KeyMod } from '../../../../base/common/keyCodes.js';
 import { Disposable, DisposableMap, DisposableStore } from '../../../../base/common/lifecycle.js';
 import * as strings from '../../../../base/common/strings.js';
 import { localize, localize2 } from '../../../../nls.js';
@@ -42,7 +41,7 @@ const chatViewContainer: ViewContainer = Registry.as<IViewContainersRegistry>(Vi
 	storageId: CHAT_SIDEBAR_PANEL_ID,
 	hideIfEmpty: true,
 	order: 1,
-}, ViewContainerLocation.AuxiliaryBar, { isDefault: true, doNotRegisterOpenCommand: true });
+}, ViewContainerLocation.AuxiliaryBar, { isDefault: false, doNotRegisterOpenCommand: true });
 
 const chatViewDescriptor: IViewDescriptor = {
 	id: ChatViewId,
@@ -51,28 +50,9 @@ const chatViewDescriptor: IViewDescriptor = {
 	singleViewPaneContainerTitle: chatViewContainer.title.value,
 	name: localize2('chat.viewContainer.label', "Chat"),
 	canToggleVisibility: false,
-	canMoveView: true,
-	openCommandActionDescriptor: {
-		id: CHAT_SIDEBAR_PANEL_ID,
-		title: chatViewContainer.title,
-		mnemonicTitle: localize({ key: 'miToggleChat', comment: ['&& denotes a mnemonic'] }, "&&Chat"),
-		keybindings: {
-			primary: KeyMod.CtrlCmd | KeyMod.Alt | KeyCode.KeyI,
-			mac: {
-				primary: KeyMod.CtrlCmd | KeyMod.WinCtrl | KeyCode.KeyI
-			}
-		},
-		order: 1
-	},
+	canMoveView: false,
 	ctorDescriptor: new SyncDescriptor(ChatViewPane, [{ location: ChatAgentLocation.Chat }]),
-	when: ContextKeyExpr.or(
-		ContextKeyExpr.or(
-			ChatContextKeys.Setup.hidden,
-			ChatContextKeys.Setup.disabled
-		)?.negate(),
-		ChatContextKeys.panelParticipantRegistered,
-		ChatContextKeys.extensionInvalid
-	)
+	when: ContextKeyExpr.false(), // Nirmaan: Chat pane removed until custom agent UI ships
 };
 Registry.as<IViewsRegistry>(ViewExtensions.ViewsRegistry).registerViews([chatViewDescriptor], chatViewContainer);
 
