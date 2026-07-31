@@ -12,10 +12,11 @@
  */
 
 export const NirmaanFonts = {
-	sans: '"Geist", "Geist Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
-	mono: '"Geist Mono", "Cascadia Code", Consolas, "Courier New", monospace',
-	monoMac: '"Geist Mono", Menlo, Monaco, "Courier New", monospace',
-	monoLinux: '"Geist Mono", "Droid Sans Mono", "monospace", monospace',
+	heading: '"Relative Sans", "Geist", "Geist Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+	sans: '"Relative Rounded", "Geist", "Geist Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+	mono: '"Relative Mono", "Geist Mono", "Cascadia Code", Consolas, "Courier New", monospace',
+	monoMac: '"Relative Mono", "Geist Mono", Menlo, Monaco, "Courier New", monospace',
+	monoLinux: '"Relative Mono", "Geist Mono", "Droid Sans Mono", "monospace", monospace',
 } as const;
 
 export const NirmaanDark = {

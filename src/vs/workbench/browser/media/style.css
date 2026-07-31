@@ -3,34 +3,66 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
+/* Custom Relative Fonts */
+@font-face {
+	font-family: 'Relative Sans';
+	src: url('../../../base/browser/ui/fonts/The-Relative-Sans-Variable.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Relative Rounded';
+	src: url('../../../base/browser/ui/fonts/The-Relative-Rounded-Variable.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Relative Mono';
+	src: url('../../../base/browser/ui/fonts/The-Relative-Mono-Variable.ttf') format('truetype');
+	font-weight: 100 900;
+	font-style: normal;
+}
+
 /* Animations */
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* Font Families (with CJK support) */
 
-.monaco-workbench.mac { font-family: "Geist", "Geist Sans", -apple-system, BlinkMacSystemFont, sans-serif; }
+.monaco-workbench.mac { font-family: "Relative Rounded", "Geist", "Geist Sans", -apple-system, BlinkMacSystemFont, sans-serif; }
 .monaco-workbench.mac:lang(zh-Hans) { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", sans-serif; }
 .monaco-workbench.mac:lang(zh-Hant) { font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", sans-serif; }
 .monaco-workbench.mac:lang(ja) { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic Pro", sans-serif; }
 .monaco-workbench.mac:lang(ko) { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Nanum Gothic", "AppleGothic", sans-serif; }
 
-.monaco-workbench.windows { font-family: "Geist", "Geist Sans", "Segoe WPC", "Segoe UI", sans-serif; }
+.monaco-workbench.windows { font-family: "Relative Rounded", "Geist", "Geist Sans", "Segoe WPC", "Segoe UI", sans-serif; }
 .monaco-workbench.windows:lang(zh-Hans) { font-family: "Segoe WPC", "Segoe UI", "Microsoft YaHei", sans-serif; }
 .monaco-workbench.windows:lang(zh-Hant) { font-family: "Segoe WPC", "Segoe UI", "Microsoft Jhenghei", sans-serif; }
 .monaco-workbench.windows:lang(ja) { font-family: "Segoe WPC", "Segoe UI", "Yu Gothic UI", "Meiryo UI", sans-serif; }
 .monaco-workbench.windows:lang(ko) { font-family: "Segoe WPC", "Segoe UI", "Malgun Gothic", "Dotom", sans-serif; }
 
 /* Linux: add `system-ui` as first font and not `Ubuntu` to allow other distribution pick their standard OS font */
-.monaco-workbench.linux { font-family: "Geist", "Geist Sans", system-ui, "Ubuntu", "Droid Sans", sans-serif; }
+.monaco-workbench.linux { font-family: "Relative Rounded", "Geist", "Geist Sans", system-ui, "Ubuntu", "Droid Sans", sans-serif; }
 .monaco-workbench.linux:lang(zh-Hans) { font-family: system-ui, "Ubuntu", "Droid Sans", "Source Han Sans SC", "Source Han Sans CN", "Source Han Sans", sans-serif; }
 .monaco-workbench.linux:lang(zh-Hant) { font-family: system-ui, "Ubuntu", "Droid Sans", "Source Han Sans TC", "Source Han Sans TW", "Source Han Sans", sans-serif; }
 .monaco-workbench.linux:lang(ja) { font-family: system-ui, "Ubuntu", "Droid Sans", "Source Han Sans J", "Source Han Sans JP", "Source Han Sans", sans-serif; }
 .monaco-workbench.linux:lang(ko) { font-family: system-ui, "Ubuntu", "Droid Sans", "Source Han Sans K", "Source Han Sans JR", "Source Han Sans", "UnDotum", "FBaekmuk Gulim", sans-serif; }
 
-.monaco-workbench.mac { --monaco-monospace-font: "SF Mono", Monaco, Menlo, Courier, monospace; }
-.monaco-workbench.windows { --monaco-monospace-font: Consolas, "Courier New", monospace; }
-.monaco-workbench.linux { --monaco-monospace-font: "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace; }
+.monaco-workbench h1,
+.monaco-workbench h2,
+.monaco-workbench h3,
+.monaco-workbench h4,
+.monaco-workbench h5,
+.monaco-workbench h6 {
+	font-family: "Relative Sans", "Geist", "Geist Sans", sans-serif;
+}
+
+.monaco-workbench.mac { --monaco-monospace-font: "Relative Mono", "SF Mono", Monaco, Menlo, Courier, monospace; }
+.monaco-workbench.windows { --monaco-monospace-font: "Relative Mono", Consolas, "Courier New", monospace; }
+.monaco-workbench.linux { --monaco-monospace-font: "Relative Mono", "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace; }
+
 
 /* Global Styles */
 
@@ -325,79 +357,88 @@ body {
 	outline-offset: -1px;
 }
 
-/* Nirmaan: floating, circular chrome */
+/* Nirmaan: boxed chrome with dashed dividers */
 .monaco-workbench {
-	--nirmaan-radius-sm: 6px;
-	--nirmaan-radius-md: 8px;
-	--nirmaan-radius-lg: 12px;
-	--nirmaan-radius-xl: 16px;
-	--nirmaan-radius-pill: 9999px;
-	--nirmaan-float-gap: 8px;
+	--nirmaan-radius-sm: 4px;
+	--nirmaan-radius-md: 6px;
+	--nirmaan-radius-lg: 8px;
+	--nirmaan-radius-xl: 8px;
+	--nirmaan-radius-pill: 6px;
+	--nirmaan-float-gap: 0px;
+
+	/* Nirmaan spacing scale — 4px base unit (Wisp design system) */
+	--nirmaan-space-xs: 4px;
+	--nirmaan-space-sm: 8px;
+	--nirmaan-space-md: 12px;
+	--nirmaan-space-lg: 16px;
+	--nirmaan-space-xl: 24px;
+	--nirmaan-space-2xl: 32px;
 }
 
 .monaco-workbench .monaco-button {
-	border-radius: var(--nirmaan-radius-pill) !important;
+	border-radius: var(--nirmaan-radius-md) !important;
 }
 
 .monaco-workbench .monaco-inputbox {
-	border-radius: var(--nirmaan-radius-md);
+	border-radius: var(--nirmaan-radius-sm);
 }
 
 .monaco-workbench .part.sidebar {
-	margin: var(--nirmaan-float-gap) 4px var(--nirmaan-float-gap) var(--nirmaan-float-gap) !important;
-	border-radius: var(--nirmaan-radius-xl) !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
 	overflow: hidden;
-	border: 1px solid var(--vscode-sideBar-border, #1a1a1a) !important;
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+	border-right: 1px dashed var(--vscode-sideBar-border, #1a1a1a) !important;
+	box-shadow: none !important;
 }
 
 .monaco-workbench .part.auxiliarybar {
-	margin: var(--nirmaan-float-gap) var(--nirmaan-float-gap) var(--nirmaan-float-gap) 4px !important;
-	border-radius: var(--nirmaan-radius-xl) !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
 	overflow: hidden;
-	border: 1px solid var(--vscode-sideBar-border, #1a1a1a) !important;
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+	border-left: 1px dashed var(--vscode-sideBar-border, #1a1a1a) !important;
+	box-shadow: none !important;
 }
 
 .monaco-workbench .part.panel {
-	margin: 0 var(--nirmaan-float-gap) var(--nirmaan-float-gap) !important;
-	border-radius: var(--nirmaan-radius-xl) !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
 	overflow: hidden;
-	border: 1px solid var(--vscode-panel-border, #1a1a1a) !important;
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+	border-top: 1px dashed var(--vscode-panel-border, #1a1a1a) !important;
+	box-shadow: none !important;
 }
 
 .monaco-workbench .part.editor {
-	margin: var(--nirmaan-float-gap) var(--nirmaan-float-gap) var(--nirmaan-float-gap) 4px;
-	border-radius: var(--nirmaan-radius-xl);
+	margin: 0 !important;
+	border-radius: 0 !important;
 	overflow: hidden;
 }
 
-/* Status bar stays edge-flush — not floating */
+/* Status bar stays edge-flush */
 .monaco-workbench .part.statusbar {
 	margin: 0 !important;
 	border-radius: 0 !important;
 	box-shadow: none !important;
+	border-top: 1px dashed var(--vscode-statusBar-border, #1a1a1a) !important;
 }
 
-/* Top activity icons — true circles, clearer spacing */
+/* Top activity icons — clean boxed selection pills */
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon,
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon {
-	padding: 0 5px !important;
-	margin: 0 1px !important;
+	padding: 0 4px !important;
+	margin: 0 4px !important;
 	border-radius: 0 !important;
 	background-color: transparent !important;
 }
 
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon .action-label:not(.codicon-more),
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon .action-label:not(.codicon-more) {
-	width: 28px !important;
-	height: 28px !important;
+	width: 30px !important;
+	height: 30px !important;
 	padding: 0 !important;
 	display: flex !important;
 	align-items: center !important;
 	justify-content: center !important;
-	border-radius: 50% !important;
+	border-radius: 6px !important;
 	position: relative;
 	box-sizing: border-box;
 }
@@ -405,11 +446,13 @@ body {
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon.checked .action-label:not(.codicon-more),
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon.checked .action-label:not(.codicon-more) {
 	background-color: var(--vscode-activityBarTop-activeBackground, rgba(255, 255, 255, 0.12)) !important;
+	border: 1px dashed var(--vscode-activityBarTop-activeBorder, #3a3a3a) !important;
 }
 
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon:not(.checked):hover .action-label:not(.codicon-more),
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon:not(.checked):hover .action-label:not(.codicon-more) {
-	background-color: color-mix(in srgb, var(--vscode-foreground) 10%, transparent);
+	background-color: color-mix(in srgb, var(--vscode-foreground) 8%, transparent);
+	border: 1px dashed color-mix(in srgb, var(--vscode-foreground) 20%, transparent) !important;
 }
 
 .monaco-workbench .part.sidebar > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon .action-label::before,

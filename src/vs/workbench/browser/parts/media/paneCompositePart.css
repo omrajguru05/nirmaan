@@ -31,11 +31,11 @@
 }
 
 .monaco-workbench .pane-composite-part:not(.empty) > .header {
-	border-bottom: 1px solid var(--vscode-sideBarActivityBarTop-border);
+	border-bottom: 1px dashed var(--vscode-sideBarActivityBarTop-border, #1a1a1a);
 }
 
 .monaco-workbench .pane-composite-part:not(.empty) > .footer {
-	border-top: 1px solid var(--vscode-sideBarActivityBarTop-border);
+	border-top: 1px dashed var(--vscode-sideBarActivityBarTop-border, #1a1a1a);
 }
 
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container,
@@ -65,8 +65,8 @@
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item,
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item {
 	text-transform: uppercase;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 8px;
+	padding-right: 8px;
 	font-size: 11px;
 	padding-bottom: 2px; /* puts the bottom border down */
 	padding-top: 2px;
@@ -166,12 +166,12 @@
 
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label:not(.codicon-more),
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label:not(.codicon-more) {
-	border-radius: 8px;
+	border-radius: var(--nirmaan-radius-md);
 }
 
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon,
 .monaco-workbench .pane-composite-part > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item.icon {
-	border-radius: 8px;
+	border-radius: var(--nirmaan-radius-md);
 }
 
 .monaco-workbench .pane-composite-part > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item:not(.icon) .action-label,

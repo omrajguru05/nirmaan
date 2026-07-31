@@ -37,7 +37,13 @@
 .monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-scrollable-element,
 .monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-list:not(.element-focused):focus:before,
 .monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-list-row {
-	border-radius: 4px;
+.monaco-workbench > .notifications-toasts .notifications-list-container,
+.monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast,
+.monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-scrollable-element,
+.monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-list:not(.element-focused):focus:before,
+.monaco-workbench > .notifications-toasts .notification-toast-container > .notification-toast .monaco-list-row {
+	border-radius: 6px;
+	border: 1px dashed var(--vscode-sideBar-border, #3a3a3a);
 }
 
 .monaco-workbench.monaco-reduce-motion > .notifications-toasts .notification-toast-container > .notification-toast {
@@ -55,16 +61,16 @@
 	transition: none;
 }
 
-/* Icons */
+/* Indian Cultural Notification Colors */
 
 .monaco-workbench > .notifications-toasts .codicon.codicon-error {
-	color: var(--vscode-notificationsErrorIcon-foreground) !important;
+	color: #f13242 !important; /* Kumkum crimson */
 }
 
 .monaco-workbench > .notifications-toasts .codicon.codicon-warning {
-	color: var(--vscode-notificationsWarningIcon-foreground) !important;
+	color: #ffae00 !important; /* Marigold gold */
 }
 
 .monaco-workbench > .notifications-toasts .codicon.codicon-info {
-	color: var(--vscode-notificationsInfoIcon-foreground) !important;
+	color: #ff9933 !important; /* Saffron */
 }

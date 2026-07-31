@@ -85,6 +85,8 @@ import { registerChatElicitationActions } from './actions/chatElicitationActions
 import { registerChatToolActions } from './actions/chatToolActions.js';
 import { ChatTransferContribution } from './actions/chatTransfer.js';
 import './agentSessions/agentSessionsView.js';
+import './agentsWindow/agentsWindowService.js';
+import './agentsWindow/agentsWindowActions.js';
 import { IChatAccessibilityService, IChatCodeBlockContextProviderService, IChatWidgetService, IQuickChatService } from './chat.js';
 import { ChatAccessibilityService } from './chatAccessibilityService.js';
 import './chatAttachmentModel.js';

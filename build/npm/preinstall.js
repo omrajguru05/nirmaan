@@ -93,21 +93,21 @@ function installHeaders() {
 	// The node gyp package got installed using the above npm command using the gyp/package.json
 	// file checked into our repository. So from that point it is safe to construct the path
 	// to that executable
-	const node_gyp = process.platform === 'win32'
-		? path.join(__dirname, 'gyp', 'node_modules', '.bin', 'node-gyp.cmd')
-		: path.join(__dirname, 'gyp', 'node_modules', '.bin', 'node-gyp');
+	// Invoke node-gyp via node + .js so paths with spaces work on Windows
+	// (shell:+.cmd breaks on unquoted spaces, e.g. "OSS Contributions").
+	const node_gyp_js = path.join(__dirname, 'gyp', 'node_modules', 'node-gyp', 'bin', 'node-gyp.js');
 
 	const local = getHeaderInfo(path.join(__dirname, '..', '..', '.npmrc'));
 	const remote = getHeaderInfo(path.join(__dirname, '..', '..', 'remote', '.npmrc'));
 
 	if (local !== undefined) {
 		// Both disturl and target come from a file checked into our repository
-		cp.execFileSync(node_gyp, ['install', '--dist-url', local.disturl, local.target], { shell: true });
+		cp.execFileSync(process.execPath, [node_gyp_js, 'install', '--dist-url', local.disturl, local.target], { stdio: 'inherit' });
 	}
 
 	if (remote !== undefined) {
 		// Both disturl and target come from a file checked into our repository
-		cp.execFileSync(node_gyp, ['install', '--dist-url', remote.disturl, remote.target], { shell: true });
+		cp.execFileSync(process.execPath, [node_gyp_js, 'install', '--dist-url', remote.disturl, remote.target], { stdio: 'inherit' });
 	}
 
 	// On Linux, apply a patch to the downloaded headers

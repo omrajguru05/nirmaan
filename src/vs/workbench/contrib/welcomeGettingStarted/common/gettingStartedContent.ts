@@ -113,12 +113,34 @@ type GettingStartedStartEntryContent = BuiltinGettingStartedStartEntry[];
 export const startEntries: GettingStartedStartEntryContent = [
 	{
 		id: 'welcome.showNewFileEntries',
-		title: localize('gettingStarted.newFile.title', "New File..."),
-		description: localize('gettingStarted.newFile.description', "Open a new untitled text file, notebook, or custom editor."),
+		title: localize('gettingStarted.newFile.title', "Create Project / File..."),
+		description: localize('gettingStarted.newFile.description', "Start a new project, text file, notebook, or custom editor"),
 		icon: Codicon.newFile,
 		content: {
 			type: 'startEntry',
 			command: 'command:welcome.showNewFileEntries',
+		}
+	},
+	{
+		id: 'topLevelGitClone',
+		title: localize('gettingStarted.topLevelGitClone.title', "Clone Repository..."),
+		description: localize('gettingStarted.topLevelGitClone.description', "Clone a remote Git repository to a local folder"),
+		when: 'config.git.enabled && !git.missing',
+		icon: Codicon.sourceControl,
+		content: {
+			type: 'startEntry',
+			command: 'command:git.clone',
+		}
+	},
+	{
+		id: 'topLevelOpenFolder',
+		title: localize('gettingStarted.openFolder.title', "Open Folder..."),
+		description: localize('gettingStarted.openFolder.description', "Open a folder to start working in Nirmaan"),
+		icon: Codicon.folderOpened,
+		when: '!isWeb && !isMac',
+		content: {
+			type: 'startEntry',
+			command: 'command:workbench.action.files.openFolder',
 		}
 	},
 	{
@@ -141,39 +163,6 @@ export const startEntries: GettingStartedStartEntryContent = [
 		content: {
 			type: 'startEntry',
 			command: 'command:workbench.action.files.openFile',
-		}
-	},
-	{
-		id: 'topLevelOpenFolder',
-		title: localize('gettingStarted.openFolder.title', "Open Folder..."),
-		description: localize('gettingStarted.openFolder.description', "Open a folder to start working"),
-		icon: Codicon.folderOpened,
-		when: '!isWeb && !isMac',
-		content: {
-			type: 'startEntry',
-			command: 'command:workbench.action.files.openFolder',
-		}
-	},
-	{
-		id: 'topLevelOpenFolderWeb',
-		title: localize('gettingStarted.openFolder.title', "Open Folder..."),
-		description: localize('gettingStarted.openFolder.description', "Open a folder to start working"),
-		icon: Codicon.folderOpened,
-		when: '!openFolderWorkspaceSupport && workbenchState == \'workspace\'',
-		content: {
-			type: 'startEntry',
-			command: 'command:workbench.action.files.openFolderViaWorkspace',
-		}
-	},
-	{
-		id: 'topLevelGitClone',
-		title: localize('gettingStarted.topLevelGitClone.title', "Clone Git Repository..."),
-		description: localize('gettingStarted.topLevelGitClone.description', "Clone a remote repository to a local folder"),
-		when: 'config.git.enabled && !git.missing',
-		icon: Codicon.sourceControl,
-		content: {
-			type: 'startEntry',
-			command: 'command:git.clone',
 		}
 	},
 	{

@@ -31,7 +31,7 @@
 }
 
 .monaco-workbench .part.auxiliarybar > .title > .title-label h2 {
-	text-transform: uppercase;
+	text-transform: none;
 }
 
 .monaco-workbench .part.auxiliarybar > .title > .composite-bar-container {
@@ -52,7 +52,7 @@
 .hc-black .monaco-workbench .part.auxiliarybar > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label,
 .hc-light .monaco-workbench .part.auxiliarybar > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label,
 .hc-light .monaco-workbench .part.auxiliarybar > .header-or-footer > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label {
-	border-radius: 8px;
+	border-radius: var(--nirmaan-radius-md);
 }
 
 .monaco-workbench .part.auxiliarybar > .title > .composite-bar-container > .composite-bar > .monaco-action-bar .action-item .action-label::before,

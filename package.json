@@ -1,10 +1,13 @@
 {
-  "name": "code-oss-dev",
+  "name": "nirmaan-dev",
   "version": "1.107.0",
   "distro": "9e7222ac0b069a4c85faa3d1acf481f0ca2977a9",
   "author": {
-    "name": "Om Rajguru"
+    "name": "Om Rajguru",
+    "email": "connect@omrajguru.com",
+    "url": "https://omrajguru.com"
   },
+  "description": "Nirmaan — AI IDE by Om Rajguru",
   "license": "MIT",
   "main": "./out/main.js",
   "type": "module",

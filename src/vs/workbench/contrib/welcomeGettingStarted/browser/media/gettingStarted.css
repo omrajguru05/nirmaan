@@ -40,11 +40,12 @@
 }
 
 .monaco-workbench .part.editor > .content .gettingStartedContainer h1 {
-	padding: 5px 0 0;
+	padding: 4px 0 0;
 	margin: 0;
 	border: none;
 	font-weight: 600;
 	font-size: 3.2em;
+	font-family: "Relative Sans", sans-serif;
 	letter-spacing: -0.04em;
 	white-space: nowrap;
 	transition: opacity 220ms ease, transform 220ms ease;
@@ -61,16 +62,16 @@
 }
 
 .monaco-workbench .part.editor > .content .gettingStartedContainer .subtitle {
-	margin-top: .6em;
+	margin-top: 8px;
 	font-size: 1.35em;
 	display: block;
 	color: var(--vscode-descriptionForeground);
 	letter-spacing: -0.02em;
 }
 
-.monaco-workbench.hc-black .part.editor > .content .gettingStartedContainer .subtitle,
-.monaco-workbench.hc-light .part.editor > .content .gettingStartedContainer .subtitle {
-	font-weight: 200;
+.monaco-workbench .part.editor > .content .gettingStartedContainer .nirmaan-hub-link:hover {
+	color: var(--vscode-textLink-activeForeground);
+	text-decoration: underline;
 }
 
 .monaco-workbench .part.editor > .content .gettingStartedContainer h2 {
@@ -97,7 +98,7 @@
 }
 
 .monaco-workbench .part.editor > .content .gettingStartedContainer .gettingStartedSlideCategories {
-	padding: 12px 24px;
+	padding: 16px 24px;
 }
 
 /* duplicated until the getting-started specific setting is removed */
@@ -280,7 +281,7 @@
 	font-size: 13px;
 	box-sizing: border-box;
 	line-height: normal;
-	margin: 8px 8px 8px 1px;
+	margin: 8px;
 	padding: 3px 6px 6px;
 	text-align: left;
 }

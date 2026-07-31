@@ -1,6 +1,6 @@
 # nirmaan
 
-yo. i'm [om](https://twitter.com/NotOmRajguru) and i'm building an ai ide.
+yo. i'm [om](https://x.com/NotOmRajguru) and i'm building an ai ide.
 
 forked vscode, ripped out the microsoft branding, and started wiring in my own design language (dark, minimal, terminal-y). that's it for now. early as hell.
 
@@ -45,6 +45,6 @@ npm run watch
 
 upstream is [microsoft/vscode](https://github.com/microsoft/vscode). mit. i'll pull from them when it makes sense.
 
-built in public. follow along on [@NotOmRajguru](https://twitter.com/NotOmRajguru).
+built in public. follow along on [@NotOmRajguru](https://x.com/NotOmRajguru).
 
 wanna reach me: [omrajguru.com/contact](https://omrajguru.com/contact) or connect@omrajguru.com

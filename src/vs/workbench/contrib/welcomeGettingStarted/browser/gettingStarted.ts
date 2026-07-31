@@ -903,20 +903,20 @@ export class GettingStartedPage extends EditorPane {
 			$('p.subtitle.description', {}, this.productService.nameLong)
 		);
 
-		// Apple-style Hello, but Indian languages only — starts English "Namaste"
+		// Apple-style Hello, rotating Indian language greetings
 		const indianGreetings = [
-			'Namaste',      // English
-			'नमस्कार',       // Marathi
-			'नमस्ते',         // Hindi
-			'નમસ્તે',         // Gujarati
-			'ਸਤ ਸ੍ਰੀ ਅਕਾਲ',   // Punjabi
-			'வணக்கம்',       // Tamil
-			'నమస్కారం',      // Telugu
-			'ನಮಸ್ಕಾರ',       // Kannada
-			'നമസ്കാരം',      // Malayalam
-			'নমস্কার',       // Bengali
-			'ନମସ୍କାର',      // Odia
-			'নমস্কাৰ',       // Assamese
+			'Namaste',
+			'नमस्कार',
+			'नमस्ते',
+			'નમસ્તે',
+			'ਸਤ ਸ੍ਰੀ ਅਕਾਲ',
+			'வணக்கம்',
+			'నమస్కారం',
+			'ನಮಸ್ಕಾರ',
+			'നമസ്കാരം',
+			'নমস্কার',
+			'ନମସ୍କାର',
+			'নমস্কাৰ'
 		];
 		let greetingIndex = 0;
 		if (this.shouldAnimate()) {
